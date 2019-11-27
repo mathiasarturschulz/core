@@ -18,7 +18,7 @@ class Route
      */
     private function getProjectName()
     {
-        return "/". explode("/", $_SERVER["REQUEST_URI"])[1];
+        return "/". explode("/", $_SERVER["REQUEST_URI"])[1] . "/Project";
     }
 
     /**
