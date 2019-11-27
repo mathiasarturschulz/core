@@ -13,22 +13,13 @@ class Route
     }
 
     /**
-     * Método responsável por buscar o nome do projeto
-     * Permitindo que não seja obrigatório alterar o conf file do xampp
-     */
-    private function getProjectName()
-    {
-        return "/". explode("/", $_SERVER["REQUEST_URI"])[1] . "/Project";
-    }
-
-    /**
      * Seta as rotas
      */
     private function setRoutes($routes)
     {
         foreach($routes as $route){
             $target = explode("@", $route[1]);
-            $newRoutes[] = [$this->getProjectName() . $route[0], $target[0], $target[1]];
+            $newRoutes[] = [$route[0], $target[0], $target[1]];
         }
         $this->routes = $newRoutes;
     }
